@@ -1,5 +1,5 @@
 .venv/
-.env
+real_home/.env
 *.pyc
 __pycache__/
 *.xml
