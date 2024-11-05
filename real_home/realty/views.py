@@ -3,6 +3,6 @@ from .models import Apartment
 from .serializers import ApartmentSerializer
 
 
-class ApartmentList(generics.ListCreateAPIView):
+class ApartmentList(generics.ListAPIView):
     queryset = Apartment.objects.all()
     serializer_class = ApartmentSerializer
