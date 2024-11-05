@@ -9,3 +9,4 @@ class Apartment(models.Model):
     is_balcony = models.BooleanField(verbose_name='Наличие балкона')
     price_square = models.IntegerField(verbose_name='Цена за кв.м.')
     price_flat = models.IntegerField(verbose_name='Цена за квартиру')
+    on_sale = models.BooleanField(default=True, verbose_name='В продаже')
