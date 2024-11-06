@@ -18,7 +18,6 @@ class Apartment(models.Model):
 
 
 class Floor(models.Model):
-    floor_num = models.IntegerField(verbose_name='Этаж')
 
     def __str__(self):
-        return f'Этаж {self.floor_num}'
+        return f'Этаж {self.id}'

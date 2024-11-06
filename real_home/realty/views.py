@@ -1,13 +1,16 @@
-from rest_framework import generics, pagination
-from .models import Apartment
-from .serializers import ApartmentSerializer
+from rest_framework import generics
+from .models import Apartment, Floor
+from .serializers import ApartmentSerializer, FloorSerializer
+from.pagination import ApartmentPagination, FloorPagination
 
 
-class ApartmentPagination(pagination.PageNumberPagination):
-    page_size = 5
-
-
-class ApartmentList(generics.ListAPIView):
+class ApartmentListAPI(generics.ListCreateAPIView):
     queryset = Apartment.objects.all()
     serializer_class = ApartmentSerializer
     pagination_class = ApartmentPagination
+
+
+class FloorListAPI(generics.ListCreateAPIView):
+    queryset = Floor.objects.all()
+    serializer_class = FloorSerializer
+    pagination_class = FloorPagination
