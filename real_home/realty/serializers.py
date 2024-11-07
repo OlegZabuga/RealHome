@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.relations import PrimaryKeyRelatedField
-from .models import Apartment, Floor, Section, ApartmentType
+from .models import Apartment, ApartmentType, Floor, Section, Condominium
 
 
 class ApartmentTypeSerializer(serializers.ModelSerializer):
