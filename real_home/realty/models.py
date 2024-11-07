@@ -27,7 +27,6 @@ class ApartmentType(models.Model):
 
 
 class Floor(models.Model):
-    amount_flats = models.IntegerField(null=True, blank=True, verbose_name='Количество квартир на этаже')
     section = models.ManyToManyField('Section', related_name='floors', verbose_name='Секция')
 
     def __str__(self):
