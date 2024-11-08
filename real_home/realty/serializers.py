@@ -3,6 +3,24 @@ from rest_framework.relations import PrimaryKeyRelatedField
 from .models import Apartment, ApartmentType, Floor, Section, Building
 
 
+class BuildingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Building
+        fields = '__all__'
+
+
+class SectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Floor
+        fields = '__all__'
+
+
+class FloorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Floor
+        fields = '__all__'
+
+
 class ApartmentTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ApartmentType
@@ -11,16 +29,11 @@ class ApartmentTypeSerializer(serializers.ModelSerializer):
 
 class ApartmentSerializer(serializers.ModelSerializer):
     type = ApartmentTypeSerializer()
-    floor = PrimaryKeyRelatedField(queryset=Floor.objects.all())
-    section = PrimaryKeyRelatedField(queryset=Section.objects.all())
+    floor = FloorSerializer()
+    section = SectionSerializer()
+    building = BuildingSerializer()
+
 
     class Meta:
         model = Apartment
-        fields = ['num', 'on_sale', 'type', 'floor', 'section']
-
-
-
-class FloorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Floor
-        fields = ['id']
+        fields = ['num', 'building', 'on_sale', 'type', 'floor', 'section']
