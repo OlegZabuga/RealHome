@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Apartment, Floor, Section, Building
-from .serializers import ApartmentSerializer, FloorSerializer, SectionSerializer, BuildingSerializer
+from .models import Apartment, Floor, Building, Project
+from .serializers import ApartmentSerializer, FloorSerializer, BuildingSerializer, ProjectSerializer
 from.pagination import ApartmentPagination, FloorPagination
 
 
@@ -19,3 +19,8 @@ class FloorListAPI(generics.ListCreateAPIView):
 class BuildingListAPI(generics.ListCreateAPIView):
     queryset = Building.objects.all()
     serializer_class = BuildingSerializer
+
+
+class ProjectListAPI(generics.ListCreateAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer

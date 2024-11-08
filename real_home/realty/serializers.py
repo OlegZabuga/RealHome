@@ -1,8 +1,16 @@
 from rest_framework import serializers
-from .models import Apartment, ApartmentType, Floor, Section, Building
+from .models import Apartment, ApartmentType, Floor, Section, Building, Project
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = '__all__'
 
 
 class BuildingSerializer(serializers.ModelSerializer):
+    project = ProjectSerializer()
+
     class Meta:
         model = Building
         fields = '__all__'
@@ -10,7 +18,7 @@ class BuildingSerializer(serializers.ModelSerializer):
 
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Floor
+        model = Section
         fields = '__all__'
 
 
