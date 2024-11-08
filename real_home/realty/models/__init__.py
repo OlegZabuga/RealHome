@@ -2,6 +2,6 @@ from .apartment import Apartment
 from .floor import Floor
 from .section import Section
 from .apartment_type import ApartmentType
-from .condominium import Condominium
+from .building import Building
 
-__all__ = ["Apartment", "Floor", "Section", "ApartmentType", "Condominium"]
+__all__ = ["Apartment", "Floor", "Section", "ApartmentType", "Building"]
