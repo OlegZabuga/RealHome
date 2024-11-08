@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.relations import PrimaryKeyRelatedField
 from .models import Apartment, ApartmentType, Floor, Section, Building
 
 
