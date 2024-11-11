@@ -10,6 +10,8 @@ class Apartment(models.Model):
     building = models.ForeignKey('Building', null=True, on_delete=models.CASCADE, verbose_name='Корпус')
 
     class Meta:
+        verbose_name = 'Квартиру'
+        verbose_name_plural = 'Квартиры'
         constraints = [
             models.UniqueConstraint(fields=['num', 'building'], name='unique_apartment_per_building')
         ]

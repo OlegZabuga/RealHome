@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Apartment, ApartmentType, Floor, Section, Building, Project
+from .forms import ApartmentForm
 
-# Register your models here.
+
+@admin.register(Apartment)
+class ApartmentAdmin(admin.ModelAdmin):
+    form = ApartmentForm
