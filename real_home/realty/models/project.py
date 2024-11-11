@@ -7,5 +7,9 @@ class Project(models.Model):
     amount_floors = models.IntegerField(verbose_name='Количество этажей')
     rating = models.CharField(max_length=1, verbose_name='Класс дома')
 
+    class Meta:
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
+
     def __str__(self):
         return f'Проект {self.name}, {self.amount_floors} этажный дом, класса {self.rating}'

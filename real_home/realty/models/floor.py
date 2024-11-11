@@ -10,6 +10,8 @@ class Floor(models.Model):
                                 null=True)
 
     class Meta:
+        verbose_name = 'Этаж'
+        verbose_name_plural = 'Этажи'
         constraints = [
             models.UniqueConstraint(fields=['floor_number', 'section'], name='unique_floor_per_section')
         ]

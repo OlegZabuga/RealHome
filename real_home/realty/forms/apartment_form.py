@@ -9,7 +9,7 @@ class ApartmentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['type'].empty_label = 'Выберете тип квартиры'
-        self.fields['floor'].empty_label = 'Выберете этаж'
-        self.fields['section'].empty_label = 'Выберете секцию'
-        self.fields['building'].empty_label = 'Выберете корпус'
+        self.fields['type'].empty_label = 'Выберите тип квартиры'
+        self.fields['floor'].empty_label = 'Выберите этаж'
+        self.fields['section'].empty_label = 'Выберите секцию'
+        self.fields['building'].empty_label = 'Выберите корпус'

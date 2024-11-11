@@ -10,5 +10,9 @@ class Building(models.Model):
                                 null=True,
                                 verbose_name='Проект дома')
 
+    class Meta:
+        verbose_name = 'Корпус'
+        verbose_name_plural = 'Корпуса'
+
     def __str__(self):
         return f'Корпус {self.num} на улице {self.on_street}'

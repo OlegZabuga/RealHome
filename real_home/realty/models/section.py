@@ -10,6 +10,8 @@ class Section(models.Model):
                                  null=True)
 
     class Meta:
+        verbose_name = 'Секцию'
+        verbose_name_plural = 'Секции'
         constraints = [
             models.UniqueConstraint(fields=['name', 'building'], name='unique_section_per_building')
         ]

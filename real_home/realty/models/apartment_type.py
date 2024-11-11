@@ -11,5 +11,9 @@ class ApartmentType(models.Model):
     price_square = models.IntegerField(verbose_name='Цена за кв.м.', null=True)
     price_flat = models.IntegerField(verbose_name='Цена за квартиру', null=True)
 
+    class Meta:
+        verbose_name = 'Тип квартиры'
+        verbose_name_plural = 'Типы квартир'
+
     def __str__(self):
         return self.plane
