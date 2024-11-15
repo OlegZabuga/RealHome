@@ -8,6 +8,7 @@ class Apartment(models.Model):
     floor = models.ForeignKey('Floor', on_delete=models.PROTECT, null=True, verbose_name='Этаж')
     section = models.ForeignKey('Section', on_delete=models.PROTECT, null=True, verbose_name='Секция')
     building = models.ForeignKey('Building', null=True, on_delete=models.CASCADE, verbose_name='Корпус')
+    image = models.ImageField(upload_to='images/', null=True, verbose_name='Изображение квартиры')
 
     class Meta:
         verbose_name = 'Квартиру'
