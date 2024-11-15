@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 
 
 class Apartment(models.Model):
@@ -19,3 +20,10 @@ class Apartment(models.Model):
 
     def __str__(self):
         return f'Квартира №{self.num} в корпусе №{self.building}'
+
+    def image_tag(self):
+        if self.image:
+            return mark_safe(f'<img src="{ self.image.url }" width="100" />')
+        return 'No image'
+
+    image_tag.short_description = 'Изображение для квартиры'
