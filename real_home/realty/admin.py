@@ -28,8 +28,12 @@ class SectionAdmin(admin.ModelAdmin):
 @admin.register(Building)
 class BuildingAdmin(admin.ModelAdmin):
     form = BuildingForm
+    list_display = ('num', 'on_street', 'project', 'image_tag')
+    readonly_fields = ('image_tag',)
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
+    list_display = ('name', 'amount_floors', 'rating', 'image_tag')
+    readonly_fields = ('image_tag',)
