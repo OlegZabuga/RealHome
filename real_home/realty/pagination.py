@@ -1,7 +1,5 @@
 from rest_framework.pagination import PageNumberPagination
 
-from realty.models import Floor
-
 
 class ApartmentPagination(PageNumberPagination):
     page_size = 2
