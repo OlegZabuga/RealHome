@@ -34,7 +34,7 @@ class ApartmentModelTest(TestCase):
         self.apartment_with_image.image.url = '/media/images/test_image.jpg'
 
     def test_str_representation(self):
-        '''Тест для строкового представления'''
+        '''Тест для строкового представления квартиры'''
         self.assertEqual(
             str(self.apartment_without_image),
             f'Квартира №{self.apartment_without_image.num} в корпусе №{self.apartment_without_image.building}'

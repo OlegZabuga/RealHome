@@ -17,4 +17,4 @@ class Floor(models.Model):
         ]
 
     def __str__(self):
-        return f'Этаж {self.id} в секции {self.section}'
+        return f'Этаж {self.floor_number} в секции {self.section}'
