@@ -7,7 +7,7 @@ from unittest.mock import MagicMock
 class ApartmentModelTest(TestCase):
     def setUp(self):
         self.type = ApartmentType.objects.create(plane='Студия')
-        self.building = Building.objects.create(num='8')
+        self.building = Building.objects.create(num=8)
         self.section = Section.objects.create(name='1', building=self.building)
         self.floor = Floor.objects.create(floor_number=1, section=self.section)
 
