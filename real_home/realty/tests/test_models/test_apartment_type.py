@@ -1,5 +1,5 @@
 from django.test import TestCase
-from realty.models import ApartmentType
+from realty.domain import ApartmentType
 
 
 class ApartmentTypeModelTest(TestCase):

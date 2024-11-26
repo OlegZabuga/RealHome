@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Apartment, ApartmentType, Floor, Section, Building, Project
+from .domain import Apartment, ApartmentType, Floor, Section, Building, Project
 
 
 @admin.register(Apartment)

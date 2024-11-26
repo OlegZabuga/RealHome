@@ -1,4 +1,4 @@
-from .models import Apartment, Floor, Building, Project
+from .domain import Apartment, Floor, Building, Project
 
 
 class ApartmentRepository:
