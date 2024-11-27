@@ -1,6 +1,6 @@
 from django.db import IntegrityError
 from django.test import TestCase
-from realty.domain import Floor, Section
+from realty.models import Floor, Section
 
 
 class FloorModelTest(TestCase):

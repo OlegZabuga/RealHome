@@ -1,5 +1,5 @@
 from .dataclasses import ProjectData
-from .project import Project
+from realty.models.project import Project
 
 
 class ProjectRepository:
@@ -32,18 +32,3 @@ class ProjectRepository:
             )
         except Exception:
             raise ValueError(f'Ошибка! Проект с id {project_id} не существует')
-
-    @staticmethod
-    def get_projects_by_rating(rating):
-        projects = Project.objects.filter(rating=rating)
-        return [
-            ProjectData(
-                id=project.id,
-                name=project.name,
-                description=project.description,
-                amount_floors=project.amount_floors,
-                rating=project.rating,
-                image_url=project.image,
-            )
-            for project in projects
-        ]

@@ -1,5 +1,5 @@
 from django.test import TestCase
-from realty.domain import Section, Building
+from realty.models import Section, Building
 from django.db import IntegrityError
 
 

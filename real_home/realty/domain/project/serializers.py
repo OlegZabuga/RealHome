@@ -12,9 +12,10 @@ class ProjectSerializer(serializers.Serializer):
     image_url = serializers.SerializerMethodField()
 
     def get_image_url(self, obj):
-        if obj.image_url:
+        image_url = getattr(obj, 'image_url', None) or obj.get('image_url')
+        if image_url:
             request = self.context.get('request')
             if request:
-                return request.build_absolute_uri(f'{settings.MEDIA_URL}{obj.image_url}')
-            return static(obj.image_url)
+                return request.build_absolute_uri(f'{settings.MEDIA_URL}{image_url}')
+            return static(image_url)
         return None

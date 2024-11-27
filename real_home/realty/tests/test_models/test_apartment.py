@@ -1,5 +1,5 @@
 from django.test import TestCase
-from realty.domain import Apartment, Building, Section, Floor, ApartmentType
+from realty.models import Apartment, Building, Section, Floor, ApartmentType
 from django.db import IntegrityError
 from unittest.mock import MagicMock
 

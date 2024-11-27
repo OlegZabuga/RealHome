@@ -1,5 +1,5 @@
 from .dataclasses import BuildingData
-from .building import Building
+from realty.models.building import Building
 
 
 class BuildingRepository:

@@ -1,5 +1,5 @@
 from django.test import TestCase
-from realty.domain import Project
+from realty.models import Project
 from unittest.mock import MagicMock
 
 
