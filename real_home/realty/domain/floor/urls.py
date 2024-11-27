@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import FloorListAPI
+from .views import FloorListView, FloorDetailView
 
 
 urlpatterns = [
-    path('', FloorListAPI.as_view(), name='floor-list'),
+    path('', FloorListView.as_view()),
+    path('<int:floor_id>/', FloorDetailView.as_view()),
 ]

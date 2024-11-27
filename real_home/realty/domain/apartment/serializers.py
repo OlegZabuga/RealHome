@@ -1,18 +1,23 @@
+from django.templatetags.static import static
 from rest_framework import serializers
-from realty.domain import Apartment
-from realty.domain.apartment_type.serializers import ApartmentTypeSerializer
-from realty.domain.building.serializers import BuildingSerializer
-from realty.domain.floor.serializers import FloorSerializer
-from realty.domain.section.serializers import SectionSerializer
+from django.conf import settings
 
 
-class ApartmentSerializer(serializers.ModelSerializer):
-    type = ApartmentTypeSerializer()
-    floor = FloorSerializer()
-    section = SectionSerializer()
-    building = BuildingSerializer()
+class ApartmentSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    num = serializers.IntegerField()
+    on_sale = serializers.BooleanField()
+    type_id = serializers.IntegerField()
+    floor_id = serializers.IntegerField()
+    section_id = serializers.IntegerField()
+    building_id = serializers.IntegerField()
+    image_url = serializers.SerializerMethodField()
 
+    def get_image_url(self, obj):
+        if obj.image_url:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(f'{settings.MEDIA_URL}{obj.image_url}')
+            return static(obj.image_url)
+        return None
 
-    class Meta:
-        model = Apartment
-        fields = ['num', 'building', 'on_sale', 'type', 'floor', 'section', 'image']

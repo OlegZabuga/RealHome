@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import BuildingListAPI
+from .views import BuildingListView, BuildingDetailView
 
 
 urlpatterns = [
-    path('', BuildingListAPI.as_view(), name='building-list'),
+    path('', BuildingListView.as_view()),
+    path('<int:building_id>/', BuildingDetailView.as_view()),
 ]

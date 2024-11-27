@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import ProjectListAPI
+from .views import ProjectListView, ProjectDetailView
 
 
 urlpatterns = [
-    path('', ProjectListAPI.as_view(), name='project-list'),
+    path('', ProjectListView.as_view()),
+    path('<int:project_id>/', ProjectDetailView.as_view()),
 ]

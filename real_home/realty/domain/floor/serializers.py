@@ -1,9 +1,7 @@
 from rest_framework import serializers
 
-from realty.domain import Floor
 
-
-class FloorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Floor
-        fields = '__all__'
+class FloorSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    floor_number = serializers.IntegerField()
+    section_id = serializers.IntegerField()
